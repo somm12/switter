@@ -1,0 +1,42 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 37%;
+}
+
+.emailForm,
+.passwordForm {
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+  border-radius: 16px;
+  margin-bottom: 8px;
+  padding: 0px 10px;
+}
+
+.loginButton {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #04a9ff;
+  border-radius: 16px;
+  background-color: #04a9ff;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.signOrCreateAccount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #04a9ff;
+  width: 30%;
+  height: 30px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  text-decoration: underline;
+}
+.signOrCreateAccount:hover {
+  cursor: pointer;
+}

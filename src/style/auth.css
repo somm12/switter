@@ -1,0 +1,17 @@
+.authWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.socialLoginButtonWrapper {
+  margin-top: 20px;
+}
+button {
+  border-radius: 16px;
+  border: 1px solid black;
+  padding: 7px 5px;
+  margin-right: 16px;
+}
