@@ -4,6 +4,9 @@ import { v4 as uuid } from "uuid";
 import { storageService } from "fbase";
 import { ref, uploadString, getDownloadURL } from "firebase/storage";
 import { addDoc, collection } from "firebase/firestore";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
+import "style/sweetFactory.css";
 
 const SweetFactory = ({ userObj }) => {
   const [sweet, setSweet] = useState("");
@@ -16,6 +19,9 @@ const SweetFactory = ({ userObj }) => {
   };
   const onSubmit = async (event) => {
     event.preventDefault();
+    if (sweet === "") {
+      return;
+    }
     let fileAttachmentURL = "";
     if (fileAttachment !== "") {
       const fileRef = ref(storageService, `${userObj.uid}/${uuid()}`);
@@ -52,24 +58,44 @@ const SweetFactory = ({ userObj }) => {
     };
     reader.readAsDataURL(file);
   };
-  const onClickClearAttachment = () => setFileAttachment(null);
+  const onClickClearAttachment = () => setFileAttachment("");
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        value={sweet}
-        onChange={onChange}
-        type="text"
-        placeholder="What's on your mind?"
-        maxLength={120}
-      />
-      <input type="file" accept="image/*" onChange={onFileChange} />
-      {fileAttachment && (
-        <div>
-          <img src={fileAttachment} width="50px" height="50px" />
-          <button onClick={onClickClearAttachment}>Clear</button>
-        </div>
-      )}
-      <input type="submit" value="Sweet" />
+    <form className="sweetForm" onSubmit={onSubmit}>
+      <div className="createSweetWrapper">
+        <input
+          className="sweetInput"
+          value={sweet}
+          onChange={onChange}
+          type="text"
+          placeholder="What's on your mind?"
+          maxLength={120}
+        />
+        <input type="submit" value="&rarr;" className="factoryInputArrow" />
+      </div>
+
+      <div className="addFileWrapper">
+        <label for="attach-file" className="factoryInputForFileLabel">
+          <span>Add photos</span>
+          <FontAwesomeIcon icon={faPlus} />
+        </label>
+        <input
+          className="inputFile"
+          id="attach-file"
+          type="file"
+          accept="image/*"
+          onChange={onFileChange}
+        />
+
+        {fileAttachment && (
+          <div className="previewWrapper">
+            <img src={fileAttachment} width="80px" height="80px" />
+            <button className="clearButton" onClick={onClickClearAttachment}>
+              Remove
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+          </div>
+        )}
+      </div>
     </form>
   );
 };

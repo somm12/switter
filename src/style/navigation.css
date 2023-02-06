@@ -1,0 +1,23 @@
+li {
+  color: white;
+}
+
+.navigationLinks {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.navigationLinks li {
+  margin-right: 8px;
+}
+
+.profileLinkTextWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileLinkTextWrapper svg {
+  margin-bottom: 8px;
+}

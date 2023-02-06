@@ -10,6 +10,7 @@ import {
   onSnapshot,
   where,
 } from "firebase/firestore";
+import "style/profile.css";
 const Profile = ({ userObj, refreshCurrentUser }) => {
   const [displayName, setDisplayName] = useState(userObj.displayName);
   const navigate = useNavigate();
@@ -54,13 +55,29 @@ const Profile = ({ userObj, refreshCurrentUser }) => {
     } = event;
     setDisplayName(value);
   };
+
+  useEffect(() => {
+    setDisplayName(userObj.displayName);
+  }, [userObj]);
   return (
-    <div>
+    <div className="profileWrapper">
       <form onSubmit={onSubmitDisplayName}>
-        <input type="text" value={displayName} onChange={onChangeDisplayName} />
-        <input type="submit" value="updateName" />
+        <input
+          className="userName"
+          type="text"
+          value={displayName}
+          onChange={onChangeDisplayName}
+        />
+        <input
+          className="updateProfileButton"
+          type="submit"
+          value="updateName"
+        />
       </form>
-      <button onClick={onClickLogOut}>LogOut</button>;
+      <button className="loginOutButton" onClick={onClickLogOut}>
+        LogOut
+      </button>
+      ;
     </div>
   );
 };

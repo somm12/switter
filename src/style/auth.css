@@ -9,9 +9,13 @@
 .socialLoginButtonWrapper {
   margin-top: 20px;
 }
-button {
+.socialLoginButtonWrapper button {
   border-radius: 16px;
   border: 1px solid black;
   padding: 7px 5px;
   margin-right: 16px;
+}
+
+button:hover {
+  cursor: pointer;
 }
