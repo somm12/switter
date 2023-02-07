@@ -57,11 +57,10 @@
 }
 
 .contentImage {
-  position: absolute;
-  display: flex;
-  justify-content: flex-end;
-  width: 30%;
+  margin-top: 5px;
 }
+
 .contentImage img {
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
 }
