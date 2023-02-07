@@ -132,8 +132,8 @@ a {
   box-sizing: border-box;
 }
 #root {
-  height: 100vh;
   background-color: black;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
