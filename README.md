@@ -34,7 +34,6 @@
 <img width="1000" alt="스크린샷 2023-02-07 오후 5 34 41" src="https://user-images.githubusercontent.com/63543733/217194325-4202aff3-dec5-4c62-aa6f-d9a8451c3f38.png">
 
 > 작은 글씨의 sign in/create account 누르면 로그인/가입 모드로 설정이 되고,<br>
-
 > 구글이나 깃허브 계정으로도 바로 로그인을 할 수 있습니다. <br>
 
 ---
